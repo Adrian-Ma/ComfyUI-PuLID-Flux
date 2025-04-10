@@ -273,12 +273,12 @@ def create_model(
 
         pretrained_cfg = {}
         if pretrained:
-            checkpoint_path = ''
+            checkpoint_path = '/app/ComfyUI/models/clip/EVA02_CLIP_L_336_psz14_s6B.pt'
             pretrained_cfg = get_pretrained_cfg(model_name, pretrained)
-            if pretrained_cfg:
-                checkpoint_path = download_pretrained(pretrained_cfg, cache_dir=cache_dir)
-            elif os.path.exists(pretrained):
-                checkpoint_path = pretrained
+            # if pretrained_cfg:
+            #    checkpoint_path = download_pretrained(pretrained_cfg, cache_dir=cache_dir)
+            # elif os.path.exists(pretrained):
+            #    checkpoint_path = pretrained
 
             if checkpoint_path:
                 logging.info(f'Loading pretrained {model_name} weights ({pretrained}).')
